@@ -244,6 +244,107 @@
   box-shadow: none;
 }
 
+.intro-logo {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 9px;
+  padding: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .25s ease;
+}
+
+.intro-logo:hover {
+  transform: translateY(-2px);
+}
+
+.intro-logo .brand-mark {
+  width: 48px;
+  height: 48px;
+  font-size: 30px;
+}
+
+.intro-logo .brand-name {
+  font-size: 30px;
+}
+
+.intro-logo .brand-sub {
+  font-size: 7px;
+}
+
+.ritual {
+  padding-top: clamp(68px, 8vw, 112px);
+  padding-bottom: clamp(72px, 8vw, 116px);
+}
+
+.ritual-heading .eyebrow {
+  justify-content: center;
+  margin-bottom: 17px;
+}
+
+.ritual-steps {
+  gap: 18px;
+  max-width: 1080px;
+  margin: 52px auto 0;
+}
+
+.ritual-steps > article {
+  min-height: 205px;
+  padding: 25px 25px 27px;
+  border: 1px solid rgba(155, 91, 79, .13);
+  border-radius: 13px;
+  background: #fffdfa;
+  box-shadow: 0 9px 26px rgba(53, 39, 30, .045);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.ritual-steps > article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(155, 91, 79, .28);
+  box-shadow: 0 15px 32px rgba(53, 39, 30, .09);
+}
+
+.ritual-step-number {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f4e9e3;
+  color: var(--rose-dark);
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+.ritual-steps h3 {
+  margin: 23px 0 9px;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.ritual-steps p {
+  max-width: 290px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.final-cta {
+  background: linear-gradient(135deg, #eeeae1 0%, #e5dfd3 100%);
+}
+
+.final-cta .button {
+  min-width: 190px;
+}
+
+.final-cta .button:hover {
+  transform: translateY(-2px);
+}
+
+.final-cta .cta-small {
+  line-height: 1.7;
+}
+
 .footer-social {
   display: grid;
   justify-items: center;
@@ -310,7 +411,45 @@
 
 @media (prefers-reduced-motion: reduce) {
   .service-image,
-  .footer-social-links a {
+  .footer-social-links a,
+  .ritual-steps > article {
     transition: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .ritual-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 36px;
+  }
+
+  .ritual-steps > article {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .ritual-steps h3 {
+    margin-top: 15px;
+  }
+
+  .intro-logo {
+    position: absolute;
+    right: 5%;
+    bottom: 18px;
+  }
+
+  .intro-logo .brand-mark {
+    width: 37px;
+    height: 37px;
+    font-size: 23px;
+  }
+
+  .intro-logo .brand-name {
+    font-size: 23px;
+  }
+
+  .intro-logo .brand-sub {
+    font-size: 6px;
   }
 }
