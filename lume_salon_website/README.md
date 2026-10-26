@@ -5,7 +5,7 @@ A mobile-first salon and spa website built with HTML5, CSS3, and vanilla JavaScr
 ## Features
 
 - Responsive landing page with JSON-driven service catalog
-- Accessible booking modal with customer and phone validation
+- Accessible booking modal with searchable multi-service selection and customer/phone validation
 - Live availability based on service duration, stylist schedules, blocked times, and confirmed appointments
 - Automatic appointment confirmation backed by Supabase/PostgreSQL
 - Database-side locking and an overlap constraint to prevent double bookings
@@ -61,3 +61,7 @@ This is a presentation-only demo: it does not authenticate staff, connect to Sup
 Update display names, descriptions, images, and prices in `js/services.json`. Keep its service IDs aligned with the `services.id` values in Supabase. Add matching service IDs and durations to the seed list in `supabase/schema.sql`, then run the updated SQL in Supabase. Manage real booking durations in the database.
 
 Prices are illustrative sample prices in Jamaican dollars (JMD). Online images and Google Fonts require an internet connection.
+
+## Footer contact links
+
+The social icons and email address in the public footer use demo profiles and `hello@lumesalon.example`. Replace their URLs and email address in the `.footer-social` section of `index.html` with the salon's real contact details before launch.

@@ -3,7 +3,6 @@
   const modal = document.getElementById("booking-modal");
   const form = document.getElementById("booking-form");
   const dateInput = document.getElementById("booking-date");
-  const serviceOptions = document.getElementById("service-select");
   const selectedServicesSummary = document.getElementById("selected-services-summary");
   const stylistSelect = document.getElementById("stylist");
   const timeSelect = document.getElementById("booking-time");
@@ -17,13 +16,13 @@
   let visibleSlots = [];
 
   function selectedServiceIds() {
-    return [...serviceOptions.querySelectorAll('input[name="service"]:checked')].map(input => input.value);
+    return window.SalonServices?.selectedIds() || [];
   }
 
   function servicesChanged(ids = selectedServiceIds()) {
     const selected = ids.map(id => window.SalonServices?.find(id)).filter(Boolean);
     selectedServicesSummary.textContent = selected.length
-      ? `${selected.length} service${selected.length === 1 ? "" : "s"} selected · ${selected.map(service => service.name).join(", ")}`
+      ? `${selected.length} service${selected.length === 1 ? "" : "s"} selected.`
       : "Choose at least one service to continue.";
     loadAvailability();
   }
@@ -176,7 +175,8 @@
   document.addEventListener("keydown", event => {
     if (event.key === "Escape" && modal.classList.contains("is-open")) close();
     if (event.key === "Tab" && modal.classList.contains("is-open")) {
-      const focusable = [...modal.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]')];
+      const focusable = [...modal.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href]')]
+        .filter(element => !element.closest("[hidden]"));
       if (!focusable.length) return;
       const first = focusable[0], last = focusable[focusable.length - 1];
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
@@ -241,7 +241,8 @@
       }).format(new Date(booking.starts_at));
       close();
       form.reset();
-      selectedServicesSummary.textContent = "Choose at least one service to continue.";
+      window.SalonServices?.clearSelection();
+      window.SalonServices?.closePicker();
       stylistSelect.replaceChildren(new Option("Any available stylist", ""));
       setTimePlaceholder("Choose a service and date first");
       dateInput.min = salonDateNow();
