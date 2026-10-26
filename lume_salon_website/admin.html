@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f2ed">
+  <meta name="description" content="A local demo of the Lumé Salon & Spa booking admin dashboard.">
+  <title>Admin Demo — Lumé Salon & Spa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">Lumé salon & spa <span>♡</span> expo showcase</div>
+  <header class="site-header admin-header">
+    <a class="brand" href="index.html" aria-label="Lumé Salon and Spa home">
+      <span class="brand-mark">L</span><span class="brand-name">lumé<span class="brand-sub">SALON & SPA</span></span>
+    </a>
+    <a class="text-link" href="index.html">← Back to website</a>
+  </header>
+
+  <main id="main" class="admin-main">
+    <section class="admin-intro">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> SALON MANAGEMENT · DEMO</p>
+        <h1>Your day,<br><em>beautifully planned.</em></h1>
+        <p class="admin-lede">Manage salon hours, make special dates available, and keep an eye on the appointment book.</p>
+      </div>
+      <div class="demo-badge"><span aria-hidden="true">✳</span> INTERACTIVE EXPO DEMO</div>
+    </section>
+
+    <aside class="demo-notice" aria-label="Demo mode notice">
+      <span class="notice-icon" aria-hidden="true">i</span>
+      <p><strong>Demo mode — sample data only.</strong> Changes are saved in this browser on this device. This page is not connected to live customer bookings or Supabase.</p>
+      <button id="reset-demo" class="reset-button" type="button">Reset demo</button>
+    </aside>
+
+    <p class="admin-error" id="admin-error" role="alert" hidden></p>
+
+    <section class="admin-stats" aria-label="Appointment summary">
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">✦</span><p>Upcoming appointments</p><strong id="stat-appointments">—</strong><span class="stat-note">Confirmed in this demo</span></article>
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">◷</span><p>Open days this week</p><strong id="stat-open-days">—</strong><span class="stat-note">Based on weekly hours</span></article>
+      <article class="stat-card"><span class="stat-icon" aria-hidden="true">♡</span><p>Next appointment</p><strong id="stat-next">—</strong><span class="stat-note" id="stat-next-name">No upcoming appointments</span></article>
+    </section>
+
+    <div class="admin-grid">
+      <section class="admin-card schedule-card" aria-labelledby="hours-heading">
+        <div class="card-heading">
+          <div><p class="eyebrow">YOUR REGULAR ROUTINE</p><h2 id="hours-heading">Weekly hours</h2></div>
+          <span class="heading-sparkle" aria-hidden="true">✳</span>
+        </div>
+        <p class="card-description">Set the hours customers could book on a typical week.</p>
+        <form id="hours-form" class="hours-list"></form>
+        <button class="button admin-primary" id="save-hours" type="submit" form="hours-form">Save weekly hours <span aria-hidden="true">↗</span></button>
+        <p class="save-message" id="hours-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="admin-card date-card" aria-labelledby="date-heading">
+        <div class="card-heading">
+          <div><p class="eyebrow">A LITTLE FLEXIBILITY</p><h2 id="date-heading">Special dates</h2></div>
+          <span class="heading-sparkle" aria-hidden="true">✿</span>
+        </div>
+        <p class="card-description">Open an extra day or block a date for a holiday, break, or day off.</p>
+        <form id="date-form" class="date-form">
+          <div class="field"><label for="special-date">Choose a date</label><input id="special-date" name="date" type="date" required></div>
+          <div class="field"><label for="special-status">Availability</label><select id="special-status" name="status"><option value="open">Open for bookings</option><option value="closed">Closed all day</option></select></div>
+          <div class="date-hours" id="date-hours">
+            <div class="field"><label for="special-opens">Opens</label><input id="special-opens" name="opens" type="time" value="09:00"></div>
+            <div class="field"><label for="special-closes">Closes</label><input id="special-closes" name="closes" type="time" value="17:00"></div>
+          </div>
+          <button class="button admin-primary date-submit" type="submit">Save special date <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="save-message" id="date-message" role="status" aria-live="polite"></p>
+        <div class="special-list-wrap">
+          <h3>Upcoming changes</h3>
+          <ul class="special-list" id="special-list"></ul>
+        </div>
+      </section>
+    </div>
+
+    <section class="admin-card appointments-card" aria-labelledby="appointments-heading">
+      <div class="card-heading appointments-heading">
+        <div><p class="eyebrow">THE CUSTOMER BOOK</p><h2 id="appointments-heading">Appointments</h2></div>
+        <span class="appointment-count" id="appointment-count">0 bookings</span>
+      </div>
+      <p class="card-description">A quick look at who's coming in and what's on their schedule.</p>
+      <div class="table-scroll">
+        <table class="appointment-table">
+          <thead><tr><th scope="col">Guest</th><th scope="col">Service</th><th scope="col">Date & time</th><th scope="col">Stylist</th><th scope="col">Status</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead>
+          <tbody id="appointment-list"></tbody>
+        </table>
+      </div>
+      <p class="empty-state" id="appointment-empty" hidden>No sample appointments yet. Reset the demo to restore the sample booking list.</p>
+    </section>
+
+    <p class="admin-footnote">For a real salon, connect staff-only tools to Supabase with secure authentication and role-based access.</p>
+  </main>
+
+  <footer class="admin-footer"><a class="text-link" href="index.html">← Return to Lumé Salon & Spa</a><span>Sample data · Local demo only</span></footer>
+</body>
+</html>

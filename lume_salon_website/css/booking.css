@@ -1,0 +1,11 @@
+.field select:disabled,
+.submit-booking:disabled {
+  cursor: not-allowed;
+  opacity: .58;
+}
+
+.form-error:not([hidden]) {
+  padding: 12px 14px;
+  border-left: 3px solid #9b5b4f;
+  background: #f5e8e3;
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "silk-press",
+    "category": "hair",
+    "name": "Silk Press & Finish",
+    "description": "A smooth, glossy finish with body, movement, and shine.",
+    "duration": "90–120 min",
+    "price": 8500,
+    "image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+    "alt": "Woman with sleek, styled hair"
+  },
+  {
+    "id": "signature-braids",
+    "category": "hair",
+    "name": "Signature Braids",
+    "description": "A protective style tailored to your look and lifestyle.",
+    "duration": "2–4 hrs",
+    "price": 12000,
+    "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80",
+    "alt": "Braided hairstyle detail"
+  },
+  {
+    "id": "curl-define",
+    "category": "hair",
+    "name": "Curl Define & Shape",
+    "description": "Bring out your natural texture with a fresh, defined finish.",
+    "duration": "60–90 min",
+    "price": 6500,
+    "image": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80",
+    "alt": "Woman with naturally curly hair"
+  },
+  {
+    "id": "calm-massage",
+    "category": "spa",
+    "name": "Calm Body Massage",
+    "description": "A soothing full-body treatment to help you unwind.",
+    "duration": "60 min",
+    "price": 7000,
+    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
+    "alt": "Peaceful spa treatment room"
+  },
+  {
+    "id": "glow-facial",
+    "category": "spa",
+    "name": "Glow Facial",
+    "description": "A refreshing facial ritual for clean, hydrated, radiant skin.",
+    "duration": "50 min",
+    "price": 6000,
+    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+    "alt": "Facial skincare treatment"
+  },
+  {
+    "id": "smooth-wax",
+    "category": "spa",
+    "name": "Smooth Waxing",
+    "description": "A careful, professional waxing service tailored to your needs.",
+    "duration": "20–45 min",
+    "price": 2500,
+    "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80",
+    "alt": "Skincare and beauty products"
+  }
+]
