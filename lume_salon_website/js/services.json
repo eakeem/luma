@@ -7,6 +7,10 @@
     "duration": "90–120 min",
     "price": 8500,
     "image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"
+    ],
     "alt": "Woman with sleek, styled hair"
   },
   {
@@ -17,6 +21,10 @@
     "duration": "2–4 hrs",
     "price": 12000,
     "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+    ],
     "alt": "Braided hairstyle detail"
   },
   {
@@ -27,6 +35,10 @@
     "duration": "60–90 min",
     "price": 6500,
     "image": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80"
+    ],
     "alt": "Woman with naturally curly hair"
   },
   {
@@ -37,6 +49,10 @@
     "duration": "60 min",
     "price": 7000,
     "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80"
+    ],
     "alt": "Peaceful spa treatment room"
   },
   {
@@ -47,6 +63,10 @@
     "duration": "50 min",
     "price": 6000,
     "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80"
+    ],
     "alt": "Facial skincare treatment"
   },
   {
@@ -57,6 +77,94 @@
     "duration": "20–45 min",
     "price": 2500,
     "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=80"
+    ],
     "alt": "Skincare and beauty products"
+  },
+  {
+    "id": "wash-and-style",
+    "category": "hair",
+    "name": "Wash & Style",
+    "description": "A refreshing cleanse, nourishing condition, and polished finish.",
+    "duration": "60–90 min",
+    "price": 5500,
+    "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=80"
+    ],
+    "alt": "Client enjoying a fresh salon style"
+  },
+  {
+    "id": "deep-conditioning",
+    "category": "hair",
+    "name": "Deep Conditioning Ritual",
+    "description": "A restorative moisture treatment for soft, healthy-looking hair.",
+    "duration": "45 min",
+    "price": 4000,
+    "image": "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+    ],
+    "alt": "Healthy, hydrated hair"
+  },
+  {
+    "id": "loc-maintenance",
+    "category": "hair",
+    "name": "Loc Maintenance",
+    "description": "Thoughtful retwisting and care to keep your locs looking their best.",
+    "duration": "90–150 min",
+    "price": 9000,
+    "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+    ],
+    "alt": "Protective natural hairstyle"
+  },
+  {
+    "id": "manicure",
+    "category": "spa",
+    "name": "Classic Manicure",
+    "description": "A relaxing nail tidy, cuticle care, and your choice of polish.",
+    "duration": "45 min",
+    "price": 3500,
+    "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80"
+    ],
+    "alt": "Classic manicure"
+  },
+  {
+    "id": "pedicure",
+    "category": "spa",
+    "name": "Spa Pedicure",
+    "description": "A soothing soak, careful nail care, and a refreshing finish.",
+    "duration": "60 min",
+    "price": 5000,
+    "image": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
+    ],
+    "alt": "Relaxing spa pedicure"
+  },
+  {
+    "id": "hot-stone-massage",
+    "category": "spa",
+    "name": "Hot Stone Massage",
+    "description": "Warm stones and restorative massage for a deeply relaxing reset.",
+    "duration": "75 min",
+    "price": 9000,
+    "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"
+    ],
+    "alt": "Warm stones prepared for a massage"
   }
 ]

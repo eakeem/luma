@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/catalog-interactions.css">
   <script src="js/renderer.js" defer></script>
   <script src="js/supabase-config.js" defer></script>
   <script src="js/booking.js" defer></script>
@@ -66,9 +67,9 @@
         <p>From a fresh new style to a much-needed pause, find the service that feels right for you.</p>
       </div>
       <div class="service-controls" role="group" aria-label="Filter services">
-        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All services <span>06</span></button>
-        <button class="filter-button" type="button" data-filter="hair" aria-pressed="false">Hair <span>03</span></button>
-        <button class="filter-button" type="button" data-filter="spa" aria-pressed="false">Spa & body <span>03</span></button>
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All services <span>12</span></button>
+        <button class="filter-button" type="button" data-filter="hair" aria-pressed="false">Hair <span>06</span></button>
+        <button class="filter-button" type="button" data-filter="spa" aria-pressed="false">Spa & body <span>06</span></button>
       </div>
       <div id="service-grid" class="service-grid" aria-live="polite">
         <p class="loading-message">Preparing your services…</p>
@@ -98,7 +99,7 @@
   <footer class="footer">
     <a class="brand footer-brand" href="#home"><span class="brand-mark">L</span><span class="brand-name">lumé<span class="brand-sub">SALON & SPA</span></span></a>
     <p>Beauty, care, and a little room to breathe.</p>
-    <div class="footer-links"><a href="#services">Services</a><a href="#about">Our story</a><a href="admin-live.html">Salon admin</a><a href="admin.html">Admin demo</a><button type="button" data-open-booking>Book with us</button></div>
+    <div class="footer-links"><a href="#services">Services</a><a href="#about">Our story</a><a href="admin-live.html">Salon admin</a><button type="button" data-open-booking>Book with us</button></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Lumé Salon & Spa</span><span>Made with care <span aria-hidden="true">♡</span></span><a href="#home">Back to top ↑</a></div>
   </footer>
 
@@ -114,7 +115,7 @@
           <div class="field"><label for="customer-name">Your name <span>*</span></label><input id="customer-name" name="name" autocomplete="name" required maxlength="80" placeholder="Full name"></div>
           <div class="field"><label for="customer-phone">Phone number <span>*</span></label><input id="customer-phone" name="phone" type="tel" autocomplete="tel" required maxlength="25" placeholder="+1 876 ..."></div>
         </div>
-        <div class="field"><label for="service-select">Choose a service <span>*</span></label><select id="service-select" name="service" required><option value="">Select a service</option></select></div>
+        <fieldset class="field service-picker"><legend>Choose your services <span>*</span></legend><p class="field-hint">Select one or more. Your appointment will be long enough for all selected services.</p><div id="service-select" class="booking-service-options"></div><p class="selected-services-summary" id="selected-services-summary" aria-live="polite"></p></fieldset>
         <div class="field"><label for="stylist">Preferred stylist</label><select id="stylist" name="stylist"><option value="">Any available stylist</option></select></div>
         <div class="form-row">
           <div class="field"><label for="booking-date">Appointment date <span>*</span></label><input id="booking-date" name="date" type="date" required></div>

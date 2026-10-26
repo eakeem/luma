@@ -37,10 +37,12 @@ Then visit `http://localhost:8000`.
    ```
 
    Do not expose `salon_admins` or grant public users table access. Only users in this table can call the admin database functions.
-7. Add each stylist in the Supabase Table Editor (`staff`), assign their supported services (`staff_services`), and create their initial weekly hours (`staff_hours`). Use PostgreSQL weekday numbers: Sunday `0`, Monday `1`, through Saturday `6`. After setup, admins can change weekly hours and special dates from `admin-live.html`.
+7. Sign in at `admin-live.html` and use **Add a stylist** to create a stylist, assign services, and create starter weekly hours. The defaults are Monday–Friday 9:00 AM–5:00 PM and Saturday 10:00 AM–4:00 PM; edit these in the Weekly hours section. If provisioning schedules directly through the Supabase Table Editor, PostgreSQL weekday numbers are Sunday `0`, Monday `1`, through Saturday `6`.
 8. Adjust service durations in the `services` table to the salon's actual booking durations. The starter values use the longest duration in each catalog range (for example, Silk Press is 120 minutes). These values determine which appointments fit.
 9. Add breaks or other unavailable periods to `blocked_periods`. A null `staff_id` blocks the period for all stylists; otherwise it blocks only that stylist.
 10. Deploy the site over HTTPS and test sign-in, schedule changes, and booking with separate accounts and browser sessions.
+
+If your Supabase project was set up with an earlier version of this site, run the **entire updated `supabase/schema.sql` file again** in the SQL Editor. It adds the new catalog services, multi-service appointment records, stylist creation function, and staff date overrides. Then redeploy the updated website files.
 
 Appointments created through the website are immediately `confirmed`. The database serializes booking attempts for the same stylist and rejects overlapping appointments even if two customers submit at nearly the same time. When a slot is taken before a customer submits, the site asks them to choose another time.
 
@@ -48,7 +50,7 @@ The anon key is intended for browser use. Never put the Supabase `service_role` 
 
 ## Expo admin demo
 
-Open `admin-live.html` (or use **Salon admin** in the website footer) to sign in and manage live schedules and appointments. **Admin demo** opens the separate sample-only showcase at `admin.html`.
+Open `admin-live.html` (or use **Salon admin** in the website footer) to sign in and manage live schedules and appointments, add stylists and assign their services.
 
 Open `admin.html` to showcase the sample salon dashboard. The demo lets you edit weekly hours, add one-day openings or closures, view sample appointments, and cancel a sample appointment. Changes are saved in that browser's local storage and can be cleared with **Reset demo**.
 
@@ -56,6 +58,6 @@ This is a presentation-only demo: it does not authenticate staff, connect to Sup
 
 ## Service catalog
 
-Update display names, descriptions, images, and prices in `js/services.json`. Keep its service IDs aligned with the `services.id` values in Supabase. Manage booking durations separately in the database.
+Update display names, descriptions, images, and prices in `js/services.json`. Keep its service IDs aligned with the `services.id` values in Supabase. Add matching service IDs and durations to the seed list in `supabase/schema.sql`, then run the updated SQL in Supabase. Manage real booking durations in the database.
 
 Prices are illustrative sample prices in Jamaican dollars (JMD). Online images and Google Fonts require an internet connection.

@@ -12,6 +12,8 @@
   const hoursForm = document.getElementById("hours-form");
   const hoursStaff = document.getElementById("hours-staff");
   const dateStaff = document.getElementById("date-staff");
+  const addStaffForm = document.getElementById("add-staff-form");
+  const staffServiceOptions = document.getElementById("staff-service-options");
   const dateForm = document.getElementById("date-form");
   const dateInput = document.getElementById("special-date");
   const statusSelect = document.getElementById("special-status");
@@ -93,7 +95,7 @@
 
   async function withFreshSession(operation) {
     if (session?.expires_at && session.expires_at * 1000 < Date.now() + 60000) {
-      if (!await refreshSession()) return;
+      if (!await refreshSession()) throw new Error("Your sign-in session expired. Please sign in again.");
     }
     try {
       return await operation();
@@ -152,6 +154,22 @@
         select.add(option);
       });
       if (dashboard.staff.some(staff => staff.id === selected)) select.value = selected;
+    });
+  }
+
+  function renderServiceOptions() {
+    staffServiceOptions.replaceChildren();
+    (dashboard.services || []).forEach(service => {
+      const label = element("label", null, "staff-service-option");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.name = "services";
+      checkbox.value = service.id;
+      const copy = element("span", null, "staff-service-copy");
+      copy.append(element("strong", service.name));
+      copy.append(element("small", `${service.duration_minutes} min`));
+      label.append(checkbox, copy);
+      staffServiceOptions.append(label);
     });
   }
 
@@ -276,6 +294,7 @@
 
   function renderDashboard() {
     renderStaffSelects();
+    renderServiceOptions();
     renderHours();
     renderSpecialDates();
     renderAppointments();
@@ -285,6 +304,11 @@
   async function loadDashboard() {
     const data = await withFreshSession(() => rpc("admin_get_dashboard"));
     if (!data) return;
+    if (!Array.isArray(data.staff) || !Array.isArray(data.services) ||
+        !Array.isArray(data.hours) || !Array.isArray(data.overrides) ||
+        !Array.isArray(data.appointments)) {
+      throw new Error("The database is missing the latest salon admin and multi-service setup. Run the updated supabase/schema.sql in Supabase SQL Editor, then refresh this page.");
+    }
     dashboard = data;
     renderDashboard();
     loginPanel.hidden = true;
@@ -324,6 +348,37 @@
   });
 
   hoursStaff.addEventListener("change", renderHours);
+
+  addStaffForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    const data = new FormData(addStaffForm);
+    const name = String(data.get("name") || "").trim();
+    const serviceIds = data.getAll("services").map(String);
+    if (!name || name.length > 80) {
+      showError("Enter a stylist name between 1 and 80 characters.");
+      return;
+    }
+    if (!serviceIds.length) {
+      showError("Select at least one service this stylist can perform.");
+      return;
+    }
+    try {
+      const staffId = await withFreshSession(() => rpc("admin_add_staff", {
+        p_name: name,
+        p_service_ids: serviceIds
+      }));
+      addStaffForm.reset();
+      await loadDashboard();
+      if (typeof staffId === "string" && dashboard.staff.some(staff => staff.id === staffId)) {
+        hoursStaff.value = staffId;
+        dateStaff.value = staffId;
+        renderHours();
+      }
+      showMessage(`${name} was added. Default hours are Monday–Friday 9:00 AM–5:00 PM and Saturday 10:00 AM–4:00 PM. Review the schedule before publishing.`);
+    } catch (error) {
+      showError(error.message);
+    }
+  });
 
   hoursForm.addEventListener("submit", async event => {
     event.preventDefault();

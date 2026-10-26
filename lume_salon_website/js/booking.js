@@ -3,7 +3,8 @@
   const modal = document.getElementById("booking-modal");
   const form = document.getElementById("booking-form");
   const dateInput = document.getElementById("booking-date");
-  const serviceSelect = document.getElementById("service-select");
+  const serviceOptions = document.getElementById("service-select");
+  const selectedServicesSummary = document.getElementById("selected-services-summary");
   const stylistSelect = document.getElementById("stylist");
   const timeSelect = document.getElementById("booking-time");
   const submitButton = form.querySelector('[type="submit"]');
@@ -14,6 +15,18 @@
   let toastTimer;
   let availabilityRequest = 0;
   let visibleSlots = [];
+
+  function selectedServiceIds() {
+    return [...serviceOptions.querySelectorAll('input[name="service"]:checked')].map(input => input.value);
+  }
+
+  function servicesChanged(ids = selectedServiceIds()) {
+    const selected = ids.map(id => window.SalonServices?.find(id)).filter(Boolean);
+    selectedServicesSummary.textContent = selected.length
+      ? `${selected.length} service${selected.length === 1 ? "" : "s"} selected · ${selected.map(service => service.name).join(", ")}`
+      : "Choose at least one service to continue.";
+    loadAvailability();
+  }
 
   function salonDateNow() {
     const parts = new Intl.DateTimeFormat("en-CA", {
@@ -93,18 +106,18 @@
 
   async function loadAvailability() {
     const requestId = ++availabilityRequest;
-    const serviceId = serviceSelect.value;
+    const serviceIds = selectedServiceIds();
     const date = dateInput.value;
     errorBox.hidden = true;
     setTimePlaceholder("Checking availability…");
-    if (!serviceId || !date) {
+    if (!serviceIds.length || !date) {
       setTimePlaceholder("Choose a service and date first");
       return;
     }
 
     try {
       const slots = await rpc("get_available_slots", {
-        p_service_id: serviceId,
+        p_service_ids: serviceIds,
         p_date: date,
         p_stylist_id: stylistSelect.value || null
       });
@@ -171,7 +184,6 @@
     }
   });
 
-  serviceSelect.addEventListener("change", loadAvailability);
   dateInput.addEventListener("change", loadAvailability);
   stylistSelect.addEventListener("change", loadAvailability);
   timeSelect.addEventListener("change", () => {
@@ -184,12 +196,12 @@
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const phone = String(data.get("phone") || "").trim();
-    const serviceId = String(data.get("service") || "");
+    const serviceIds = selectedServiceIds();
     const date = String(data.get("date") || "");
     const notes = String(data.get("notes") || "").trim();
     const slot = visibleSlots[Number(timeSelect.value)];
 
-    if (!name || !phone || !serviceId || !date || !slot) {
+    if (!name || !phone || !serviceIds.length || !date || !slot) {
       showError("Please enter your details and choose an available appointment time.");
       return;
     }
@@ -208,7 +220,7 @@
     submitButton.textContent = "Confirming…";
     try {
       const result = await rpc("create_booking", {
-        p_service_id: serviceId,
+        p_service_ids: serviceIds,
         p_staff_id: slot.staff_id,
         p_starts_at: slot.starts_at,
         p_customer_name: name,
@@ -229,6 +241,7 @@
       }).format(new Date(booking.starts_at));
       close();
       form.reset();
+      selectedServicesSummary.textContent = "Choose at least one service to continue.";
       stylistSelect.replaceChildren(new Option("Any available stylist", ""));
       setTimePlaceholder("Choose a service and date first");
       dateInput.min = salonDateNow();
@@ -245,5 +258,5 @@
     }
   });
 
-  window.SalonBooking = { open, close };
+  window.SalonBooking = { open, close, servicesChanged };
 })();

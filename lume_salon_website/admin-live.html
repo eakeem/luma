@@ -38,7 +38,6 @@
     <aside class="demo-notice" aria-label="Setup notice">
       <span class="notice-icon" aria-hidden="true">i</span>
       <p id="setup-notice"><strong>Secure staff access.</strong> Only accounts added to the salon admin list can use this page.</p>
-      <a class="reset-button" href="admin.html">Try sample demo</a>
     </aside>
 
     <p class="admin-error" id="admin-error" role="alert" hidden></p>
@@ -68,6 +67,16 @@
       </section>
 
       <div class="admin-grid">
+        <section class="admin-card add-staff-card" aria-labelledby="add-staff-heading">
+          <div class="card-heading"><div><p class="eyebrow">GROW YOUR TEAM</p><h2 id="add-staff-heading">Add a stylist</h2></div><span class="heading-sparkle" aria-hidden="true">✦</span></div>
+          <p class="card-description">Add a staff profile and choose the services they can perform. You can customize their hours below.</p>
+          <form id="add-staff-form" class="staff-form">
+            <div class="field"><label for="new-staff-name">Stylist name</label><input id="new-staff-name" name="name" type="text" required maxlength="80" autocomplete="off" placeholder="e.g. Nia"></div>
+            <fieldset class="staff-service-picker"><legend>Services they perform</legend><div id="staff-service-options" class="staff-service-options"></div></fieldset>
+            <button class="button admin-primary" type="submit">Add stylist <span aria-hidden="true">↗</span></button>
+          </form>
+        </section>
+
         <section class="admin-card schedule-card" aria-labelledby="hours-heading">
           <div class="card-heading"><div><p class="eyebrow">YOUR REGULAR ROUTINE</p><h2 id="hours-heading">Weekly hours</h2></div><span class="heading-sparkle" aria-hidden="true">✳</span></div>
           <p class="card-description">Set the selected stylist's regular weekly availability.</p>
