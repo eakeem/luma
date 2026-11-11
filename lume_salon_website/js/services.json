@@ -6,10 +6,9 @@
     "description": "A smooth, glossy finish with body, movement, and shine.",
     "duration": "90–120 min",
     "price": 8500,
-    "image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
+    "image": "images/silk-press-and-finish.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"
+      "images/silk-press-and-finish2.jpeg"
     ],
     "alt": "Woman with sleek, styled hair"
   },
@@ -37,20 +36,24 @@
     "duration": "60–90 min",
     "price": 6500,
     "image": "images/hair1.jpeg",
-    "images": [],
+    "images": [
+      "images/curl-define-and-shape1.jpeg",
+      "images/curl-define-and-shape2.jpeg"
+    ],
     "alt": "Woman with naturally curly hair"
   },
   {
     "id": "calm-massage",
     "category": "spa",
     "name": "Calm Body Massage",
-    "description": "A soothing full-body treatment to help you unwind.",
+    "description": "A soothing full body treatment to help you unwind.",
     "duration": "60 min",
     "price": 7000,
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
+    "image": "images/calm-body-massage.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80"
+      "images/calm-body-massage1.jpeg",
+      "images/calm-body-massage3.jpeg",
+      "images/calm-body-massage4.jpeg"
     ],
     "alt": "Peaceful spa treatment room"
   },
@@ -76,10 +79,10 @@
     "description": "A careful, professional waxing service tailored to your needs.",
     "duration": "20–45 min",
     "price": 2500,
-    "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80",
+    "image": "images/smooth-waxing.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=80"
+      "images/smooth-waxing1.jpeg",
+      "images/smooth-waxing2.jpeg"
     ],
     "alt": "Skincare and beauty products"
   },
@@ -90,26 +93,28 @@
     "description": "A refreshing cleanse, nourishing condition, and polished finish.",
     "duration": "60–90 min",
     "price": 5500,
-    "image": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80",
+    "image": "images/wash-and-style1.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=80"
+      "images/wash-and-style2.jpeg",
+      "images/wash-and-style3.jpeg",
+      "images/wash-and-style4.jpeg"
     ],
     "alt": "Client enjoying a fresh salon style"
   },
   {
     "id": "deep-conditioning",
-    "category": "hair",
-    "name": "Deep Conditioning Ritual",
-    "description": "A restorative moisture treatment for soft, healthy-looking hair.",
+    "category": "spa",
+    "name": "Microblading",
+    "description": "A precise brow enhancing treatment for naturally defined looking brows.",
     "duration": "45 min",
     "price": 4000,
-    "image": "https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=900&q=80",
+    "image": "images/micro-blading1.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+      "images/micro-blading2.jpeg",
+      "images/micro-blading3.jpeg",
+      "images/micro-blading4.jpeg"
     ],
-    "alt": "Healthy, hydrated hair"
+    "alt": "Microblading brow treatment"
   },
   {
     "id": "loc-maintenance",
@@ -118,10 +123,11 @@
     "description": "Thoughtful retwisting and care to keep your locs looking their best.",
     "duration": "90–150 min",
     "price": 9000,
-    "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80",
+    "image": "images/loc-maintenace1.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80"
+      "images/loc-maintenace2.jpeg",
+      "images/loc-maintenace3.jpeg",
+      "images/loc-maintence4.jpeg"
     ],
     "alt": "Protective natural hairstyle"
   },
@@ -132,12 +138,9 @@
     "description": "A relaxing nail tidy, cuticle care, and your choice of polish.",
     "duration": "45 min",
     "price": 3500,
-    "image": "images/manicure2.jpeg",
+    "image": "images/manicure1.jpeg",
     "images": [
-      "images/manicure1.jpeg",
-      "images/pedicure3.jpeg",
-      "images/pedicure4.jpeg",
-      "images/pedicure5.jpeg"
+      "images/manicure2.jpeg"
     ],
     "alt": "Classic manicure"
   },
@@ -148,9 +151,12 @@
     "description": "A soothing soak, careful nail care, and a refreshing finish.",
     "duration": "60 min",
     "price": 5000,
-    "image": "images/pedicure2.jpeg",
+    "image": "images/pedicure1.jpeg",
     "images": [
-      "images/pedicure1.jpeg"
+      "images/pedicure2.jpeg",
+      "images/pedicure3.jpeg",
+      "images/pedicure4.jpeg",
+      "images/pedicure5.jpeg"
     ],
     "alt": "Relaxing spa pedicure"
   },
@@ -161,10 +167,10 @@
     "description": "Warm stones and restorative massage for a deeply relaxing reset.",
     "duration": "75 min",
     "price": 9000,
-    "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80",
+    "image": "images/hot-stone-massage.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80"
+      "images/hot-stone-massage1.jpeg",
+      "images/hot-stone-massage2.jpeg"
     ],
     "alt": "Warm stones prepared for a massage"
   }

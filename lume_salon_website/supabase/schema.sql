@@ -21,7 +21,7 @@ insert into public.services (id, name, duration_minutes) values
   ('signature-braids', 'Signature Braids', 240),
   ('curl-define', 'Curl Define & Shape', 90),
   ('wash-and-style', 'Wash & Style', 90),
-  ('deep-conditioning', 'Deep Conditioning Ritual', 45),
+  ('deep-conditioning', 'Microblading', 45),
   ('loc-maintenance', 'Loc Maintenance', 150),
   ('calm-massage', 'Calm Body Massage', 60),
   ('glow-facial', 'Glow Facial', 50),
