@@ -25,6 +25,7 @@ insert into public.services (id, name, duration_minutes) values
   ('loc-maintenance', 'Loc Maintenance', 150),
   ('calm-massage', 'Calm Body Massage', 60),
   ('glow-facial', 'Glow Facial', 50),
+  ('makeup-application', 'Makeup Application', 20),
   ('smooth-wax', 'Smooth Waxing', 45),
   ('manicure', 'Classic Manicure', 45),
   ('pedicure', 'Spa Pedicure', 60),

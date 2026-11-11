@@ -20,10 +20,12 @@
     "description": "A protective style tailored to your look and lifestyle.",
     "duration": "2–4 hrs",
     "price": 12000,
-    "image": "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=80",
+    "image": "images/hair2.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+      "images/hair3.jpeg",
+      "images/hair4.jpeg",
+      "images/hair5.jpeg",
+      "images/hair6.jpeg"
     ],
     "alt": "Braided hairstyle detail"
   },
@@ -34,11 +36,8 @@
     "description": "Bring out your natural texture with a fresh, defined finish.",
     "duration": "60–90 min",
     "price": 6500,
-    "image": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80"
-    ],
+    "image": "images/hair1.jpeg",
+    "images": [],
     "alt": "Woman with naturally curly hair"
   },
   {
@@ -56,18 +55,19 @@
     "alt": "Peaceful spa treatment room"
   },
   {
-    "id": "glow-facial",
+    "id": "makeup-application",
     "category": "spa",
-    "name": "Glow Facial",
-    "description": "A refreshing facial ritual for clean, hydrated, radiant skin.",
-    "duration": "50 min",
-    "price": 6000,
-    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80",
+    "name": "Makeup Application",
+    "description": "A polished, personalized makeup look for your next occasion.",
+    "duration": "20 min",
+    "price": 8000,
+    "image": "images/makeup1.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80"
+      "images/makeup2.jpeg",
+      "images/makeup3.jpeg",
+      "images/makeup4.jpeg"
     ],
-    "alt": "Facial skincare treatment"
+    "alt": "Finished makeup look"
   },
   {
     "id": "smooth-wax",
@@ -132,10 +132,12 @@
     "description": "A relaxing nail tidy, cuticle care, and your choice of polish.",
     "duration": "45 min",
     "price": 3500,
-    "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
+    "image": "images/manicure2.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80"
+      "images/manicure1.jpeg",
+      "images/pedicure3.jpeg",
+      "images/pedicure4.jpeg",
+      "images/pedicure5.jpeg"
     ],
     "alt": "Classic manicure"
   },
@@ -146,10 +148,9 @@
     "description": "A soothing soak, careful nail care, and a refreshing finish.",
     "duration": "60 min",
     "price": 5000,
-    "image": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80",
+    "image": "images/pedicure2.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
+      "images/pedicure1.jpeg"
     ],
     "alt": "Relaxing spa pedicure"
   },
